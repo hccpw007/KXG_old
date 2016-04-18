@@ -10,11 +10,13 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.base.BaseFragment;
+
 public class MyViewPager extends ViewPager {
 	private boolean isCanScroll = true;
 	private boolean isHaveFragment = false;
 	HashMap<String, Fragment> stopMap = new HashMap<String, Fragment>();
-	List<Fragment> list;
+	List<BaseFragment> list;
 
 	public MyViewPager(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -37,12 +39,12 @@ public class MyViewPager extends ViewPager {
 	 * 设置fragment
 	 */
 	public void setFragemnt(FragmentManager fragmentManager,
-			final List<Fragment> list) {
+			final List<BaseFragment> list) {
 		this.list = list;
 		isHaveFragment = true;
 		MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(
 				fragmentManager, list);
-		setOffscreenPageLimit(0);
+		setOffscreenPageLimit(5);
 		stopMap.put("Fragment", list.get(0));
 		setAdapter(adapter);
 		setOnMyPageChangeListener(null);

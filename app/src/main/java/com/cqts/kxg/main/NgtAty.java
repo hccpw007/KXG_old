@@ -2,6 +2,7 @@ package com.cqts.kxg.main;
 
 import java.util.ArrayList;
 
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,13 +11,14 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import com.base.BaseFragment;
 import com.base.BaseValue;
 import com.base.views.MyViewPager;
 import com.base.views.MyViewPager.OnMyPageChangeListener;
 import com.cqts.kxg.R;
 
 public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, OnCheckedChangeListener {
-	private ArrayList<Fragment> list = new ArrayList<Fragment>();;
+	private ArrayList<BaseFragment> list = new ArrayList<BaseFragment>();;
 	private MyViewPager ngt_pager;
 	private RadioGroup ngt_rg;
 	RadioButton[] ngt_rb = new RadioButton[5];
@@ -27,10 +29,17 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.activity_ngt);
 		InitView();
 		InitFragment();
 		InitNgt();
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		list.get(0).onShow();
 	}
 
 	private void InitView() {
@@ -47,10 +56,10 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
 
 	private void InitFragment() {
 		list.add(new Fragment1());
-		list.add(new Fragment1());
-		list.add(new Fragment1());
-		list.add(new Fragment1());
-		list.add(new Fragment1());
+		list.add(new Fragment2());
+		list.add(new Fragment2());
+		list.add(new Fragment2());
+		list.add(new Fragment2());
 		ngt_pager.setFragemnt(getSupportFragmentManager(), list);
 		ngt_pager.setOnMyPageChangeListener(this);
 	}
@@ -58,6 +67,8 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
 	@Override
 	public void OnMyPageSelected(int arg0) {
 		ngt_rb[arg0].setChecked(true);
+		list.get(arg0).onStart();
+		list.get(arg0).onShow();
 	}
 
 	/**

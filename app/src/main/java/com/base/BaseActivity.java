@@ -3,6 +3,7 @@ package com.base;
 import com.base.http.HttpForVolley;
 import com.base.swipebacklayout.SwipeBackActivity;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ public class BaseActivity extends SwipeBackActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		http = new HttpForVolley(this);
 	}
 
