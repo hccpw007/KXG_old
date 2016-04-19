@@ -37,11 +37,11 @@
                 android:paddingLeft="10dp" />
 
             <ImageView
-                android:layout_marginRight="10dp"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:layout_marginRight="10dp"
                 android:src="@mipmap/home_search_ic" />
-            
+
         </LinearLayout>
     </LinearLayout>
 
@@ -107,10 +107,144 @@
         </RadioGroup>
     </FrameLayout>
 
-    <com.base.refreshlayout.RefreshLayout
-        android:id="@+id/layout"
+    <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="80dp"
+        android:orientation="horizontal">
 
-    </com.base.refreshlayout.RefreshLayout>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_clnz" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_xbss" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_nnxx" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_mytz" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="潮流女装"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="箱包首饰"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="男女鞋靴"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="母婴童装"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_mzgh" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_jdsm" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_jjjj" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/home_gdfl" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="美妆个护"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="家电数码"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="家居家具"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#767676"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:text="更多分类"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    </LinearLayout>
+
+
 </LinearLayout>

@@ -1,0 +1,7 @@
+
+自定义的drawable文件夹下的所有文件的用途说明
+
+  1.sl_ngt_rb(1-5) 导航页的RadioButton的图片跟随选中状态的改变      
+  2.sl_ngt_text    导航页的RadioButton的文字颜色跟随选中状态的改变
+  3.sl_viewpager_dot 导航页viewpager的圆点切换
+  4.shape_f8f8f8_rectangle 首页搜索的灰色 2dp角度的背景

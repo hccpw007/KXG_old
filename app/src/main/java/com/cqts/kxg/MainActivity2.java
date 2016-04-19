@@ -17,11 +17,5 @@ public class MainActivity2 extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		RefreshLayout RefreshLayout = (RefreshLayout) findViewById(R.id.layout);
-		RefreshLayout.setOnRefreshListener(new OnRefreshListener() {
-			@Override
-			public void onRefresh() {
-			}
-		});
 	}
 }

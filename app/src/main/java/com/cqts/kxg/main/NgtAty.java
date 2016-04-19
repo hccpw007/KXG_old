@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,6 +15,7 @@ import com.base.BaseValue;
 import com.base.views.MyViewPager;
 import com.base.views.MyViewPager.OnMyPageChangeListener;
 import com.cqts.kxg.R;
+import com.cqts.kxg.home.HomeFragment;
 
 public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, OnCheckedChangeListener {
 	private ArrayList<BaseFragment> list = new ArrayList<BaseFragment>();;
@@ -55,7 +55,7 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
 	}
 
 	private void InitFragment() {
-		list.add(new Fragment1());
+		list.add(new HomeFragment());
 		list.add(new Fragment2());
 		list.add(new Fragment2());
 		list.add(new Fragment2());
