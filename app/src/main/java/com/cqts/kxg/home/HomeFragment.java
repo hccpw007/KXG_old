@@ -1,18 +1,25 @@
 package com.cqts.kxg.home;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 
 import com.base.BaseFragment;
 import com.base.refreshlayout.RefreshLayout;
+import com.base.views.FullyGridLayoutManager;
+import com.base.views.MyGridDecoration;
 import com.base.views.MyViewPager;
 import com.cqts.kxg.R;
+import com.cqts.kxg.home.adapter.HomeRecyclerViewAdapter;
 import com.cqts.kxg.home.adapter.HomeViewpagerAdapter;
 
 import java.util.Timer;
@@ -27,6 +34,9 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     private RadioButton[] rdBtn = new RadioButton[4];
     private Timer timer;
     private TimerTask timerTask;
+    private RecyclerView home_rv;
+    private RecyclerView home_rv2;
+    private ScrollView home_scroll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,14 +54,33 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         rdBtn[1] = ((RadioButton) view.findViewById(R.id.home_rdbtn2));
         rdBtn[2] = ((RadioButton) view.findViewById(R.id.home_rdbtn3));
         rdBtn[3] = ((RadioButton) view.findViewById(R.id.home_rdbtn4));
+        home_rv = (RecyclerView) view.findViewById(R.id.home_rv);
+        home_rv2 = (RecyclerView) view.findViewById(R.id.home_rv2);
+        home_scroll = (ScrollView) view.findViewById(R.id.home_scroll);
+        home_scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
 
 
+        InitRecyclerView1();
+        InitRecyclerView2();
         InitViewPage();
     }
 
-    /**
-     * 广告Viewpager
-     */
+    //第一个recyclerview(今日推荐)
+    private void InitRecyclerView1() {
+        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(),2);
+        home_rv.setLayoutManager(manager1);
+        home_rv.addItemDecoration(new MyGridDecoration(10,10, Color.WHITE,true));
+        home_rv.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
+    }
+
+    private void InitRecyclerView2() {
+        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(),2);
+        home_rv2.setLayoutManager(manager1);
+        home_rv2.addItemDecoration(new MyGridDecoration(10,10, Color.WHITE,true));
+        home_rv2.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
+    }
+
+    //广告Viewpager
     private void InitViewPage() {
         home_viewpager.setOnMyPageChangeListener(this);
         home_viewpager.setAdapter(new HomeViewpagerAdapter(getActivity(), rdBtn));
@@ -69,16 +98,14 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         };
         timer.schedule(timerTask,0,4000);
     }
-
+    //广告Viewpager的轮播事件
     @Override
     public boolean handleMessage(Message msg) {
         home_viewpager.setCurrentItem(1 + home_viewpager.getCurrentItem(), true);
         return false;
     }
 
-    /**
-     * 广告Viewpager保证可以循环滑动
-     */
+    //广告Viewpager保证可以循环滑动
     @Override
     public void OnMyPageSelected(int arg0) {
         if (arg0 == 0) {

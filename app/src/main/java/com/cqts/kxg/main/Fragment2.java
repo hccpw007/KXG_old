@@ -13,7 +13,7 @@ public class Fragment2 extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (null == view) {
-            view = inflater.inflate(R.layout.activity_main, null);
+            view = inflater.inflate(R.layout.item_homerv, null);
             InitView();
         }
         return view;

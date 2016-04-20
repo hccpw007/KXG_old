@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cqts.kxg">
+
     <!-- 权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -56,11 +57,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name="com.base.zxing.CaptureActivity"
             android:theme="@style/AppBaseTheme"></activity>
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".Main3Activity"></activity>
+        <activity android:name=".center.LoginActivity"></activity>
     </application>
 
 </manifest>
