@@ -8,11 +8,10 @@
     tools:context="com.cqts.kxg.center.LoginActivity">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="23dp"
         android:src="@mipmap/login_logo" />
 
     <TextView
@@ -22,10 +21,10 @@
         android:layout_marginTop="-20dp"
         android:text="开心久久购商城"
         android:textColor="@color/white"
-        android:textSize="25sp" />
+        android:textSize="22sp" />
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -40,13 +39,21 @@
             android:src="@mipmap/login_user" />
 
         <com.base.views.MyEditText
+            android:textSize="15sp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:maxLength="20"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:singleLine="true"
-            android:hint="用户名"
+            android:hint="@string/login_user"
+            android:inputType="text"
+            android:imeActionLabel="你好"
+            android:imeOptions="actionDone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparency" />
+            android:background="@color/transparency"
+            android:id="@+id/login_user_et" />
     </LinearLayout>
 
     <View
@@ -56,7 +63,7 @@
         android:layout_marginRight="40dp"
         android:background="@color/white" />
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
@@ -71,13 +78,18 @@
             android:src="@mipmap/login_mima" />
 
         <com.base.views.MyEditText
+            android:textSize="15sp"
+            android:textColorHint="@color/white"
+            android:inputType="textPassword"
+            android:maxLength="20"
             android:gravity="center_vertical"
             android:paddingLeft="20dp"
             android:singleLine="true"
-            android:hint="密码"
+            android:hint="@string/login_pswd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/transparency" />
+            android:background="@color/transparency"
+            android:id="@+id/login_pswd_et" />
     </LinearLayout>
 
     <View
@@ -92,12 +104,13 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:textSize="22sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@mipmap/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="登    录"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/login_login_btn" />
     <LinearLayout
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
@@ -108,16 +121,20 @@
             android:textColor="@color/white"
             android:layout_marginLeft="40dp"
             android:text="注册帐号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_regist_tv" />
+        <View
             android:layout_weight="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
         <TextView
             android:textSize="16sp"
             android:textColor="@color/white"
             android:layout_marginRight="40dp"
             android:text="忘记密码"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/lgoin_forget_tv" />
     </LinearLayout>
-
 </LinearLayout>

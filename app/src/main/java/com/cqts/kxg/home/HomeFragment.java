@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,7 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     private static final int VIEWPAGER = -1;
     private Handler handler;
     private MyViewPager home_viewpager;
-    private RefreshLayout layout;
+    private RefreshLayout home_refresh;
     private RadioButton[] rdBtn = new RadioButton[4];
     private Timer timer;
     private TimerTask timerTask;
@@ -42,7 +41,7 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (null == view) {
-            view = inflater.inflate(R.layout.activity_main, null);
+            view = inflater.inflate(R.layout.fragment_home, null);
             InitView();
         }
         return view;
@@ -57,6 +56,16 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         home_rv = (RecyclerView) view.findViewById(R.id.home_rv);
         home_rv2 = (RecyclerView) view.findViewById(R.id.home_rv2);
         home_scroll = (ScrollView) view.findViewById(R.id.home_scroll);
+        home_refresh = (RefreshLayout) view.findViewById(R.id.home_refresh);
+
+        home_refresh.setScrollView(home_scroll);
+        home_refresh.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+            }
+        });
+
         home_scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
 
 
@@ -67,16 +76,16 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
 
     //第一个recyclerview(今日推荐)
     private void InitRecyclerView1() {
-        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(),2);
+        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv.setLayoutManager(manager1);
-        home_rv.addItemDecoration(new MyGridDecoration(10,10, Color.WHITE,true));
+        home_rv.addItemDecoration(new MyGridDecoration(10, 10, Color.WHITE, true));
         home_rv.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
     }
 
     private void InitRecyclerView2() {
-        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(),2);
+        FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv2.setLayoutManager(manager1);
-        home_rv2.addItemDecoration(new MyGridDecoration(10,10, Color.WHITE,true));
+        home_rv2.addItemDecoration(new MyGridDecoration(10, 10, Color.WHITE, true));
         home_rv2.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
     }
 
@@ -90,14 +99,15 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         //设置循环播放
         handler = new Handler(this);
         timer = new Timer();
-        timerTask = new TimerTask(){
+        timerTask = new TimerTask() {
             @Override
             public void run() {
                 handler.sendEmptyMessage(VIEWPAGER);
             }
         };
-        timer.schedule(timerTask,0,4000);
+        timer.schedule(timerTask, 0, 4000);
     }
+
     //广告Viewpager的轮播事件
     @Override
     public boolean handleMessage(Message msg) {
@@ -125,6 +135,9 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     @Override
     public void onStop() {
         super.onStop();
+        if (home_refresh != null) {
+            home_refresh.setResultState(RefreshLayout.ResultState.close);
+        }
     }
 
     @Override

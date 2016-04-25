@@ -3,7 +3,10 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
-
+    <com.base.refreshlayout.RefreshLayout
+        android:id="@+id/home_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ScrollView
         android:scrollbars="none"
         android:id="@+id/home_scroll"
@@ -58,10 +61,10 @@
 
                 </LinearLayout>
             </LinearLayout>
-
             <FrameLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="160dp">
 
                 <com.base.views.MyViewPager
                     android:id="@+id/home_viewpager"
@@ -127,6 +130,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -134,6 +138,7 @@
                     android:src="@mipmap/home_clnz" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -141,6 +146,7 @@
                     android:src="@mipmap/home_xbss" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -148,6 +154,7 @@
                     android:src="@mipmap/home_nnxx" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -202,6 +209,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -209,6 +217,7 @@
                     android:src="@mipmap/home_mzgh" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -216,6 +225,7 @@
                     android:src="@mipmap/home_jdsm" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -223,6 +233,7 @@
                     android:src="@mipmap/home_jjjj" />
 
                 <ImageView
+                    android:padding="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -272,6 +283,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -314,6 +326,7 @@
                     android:background="#f96868" />
             </LinearLayout>
             <TextView
+                android:layout_marginBottom="10dp"
                 android:textSize="12sp"
                 android:textColor="#838383"
                 android:layout_marginTop="-10dp"
@@ -329,6 +342,7 @@
 
 
             <LinearLayout
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -371,6 +385,7 @@
                     android:background="#f96868" />
             </LinearLayout>
             <TextView
+                android:layout_marginBottom="10dp"
                 android:textSize="12sp"
                 android:textColor="#838383"
                 android:layout_marginTop="-10dp"
@@ -385,4 +400,5 @@
             </android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
+    </com.base.refreshlayout.RefreshLayout>
 </LinearLayout>

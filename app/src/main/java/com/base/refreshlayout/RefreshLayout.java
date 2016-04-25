@@ -173,7 +173,7 @@ public class RefreshLayout extends LinearLayout {
 			break;
 		case failed:
 			refreshStateImageView.setVisibility(View.VISIBLE);
-			refreshStateTextView.setText("DSAGAS");
+			refreshStateTextView.setText(R.string.refresh_fail);
 			refreshStateImageView
 					.setBackgroundResource(R.mipmap.refresh_failed);
 			closeView();

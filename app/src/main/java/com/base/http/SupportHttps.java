@@ -17,7 +17,7 @@ public class SupportHttps {
     protected  final String TAG = "NukeSSLCerts";
     public static void setInit() {
         try {
-            
+
             TrustManager[] trustAllCerts = new TrustManager[] { 
                 new X509TrustManager() {
                     public X509Certificate[] getAcceptedIssuers() {
