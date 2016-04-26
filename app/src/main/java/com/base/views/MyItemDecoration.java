@@ -40,9 +40,9 @@ public class MyItemDecoration extends RecyclerView.ItemDecoration {
             final int top = child.getTop();
 
             if (orientation== OrientationHelper.VERTICAL) {
-                c.drawRect(0, bottom, right , bottom+size, paint);
+                c.drawRect(left, bottom, right , bottom+size, paint);
             } else {
-                c.drawRect(right, 0, right +size, bottom, paint);
+                c.drawRect(right, top, right +size, bottom, paint);
             }
         }
     }

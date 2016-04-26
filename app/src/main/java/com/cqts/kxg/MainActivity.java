@@ -1,23 +1,23 @@
-//package com.cqts.kxg;
-//
-//import android.graphics.Color;
-//import android.os.Bundle;
-//import android.support.v7.widget.GridLayoutManager;
-//import android.support.v7.widget.RecyclerView;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//
-//import com.base.BaseActivity;
-//import com.base.views.MyGridDecoration;
-//
-//public class MainActivity extends BaseActivity {
-//
-//	private GridLayoutManager manager1;
-//
-//	@Override
-//	protected void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
+package com.cqts.kxg;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.base.BaseActivity;
+import com.base.views.MyGridDecoration;
+
+public class MainActivity extends BaseActivity {
+
+	private GridLayoutManager manager1;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 //		setContentView(R.layout.activity_main3);
 //		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recy);
 ////		LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -67,5 +67,5 @@
 //		public Holser(View itemView) {
 //			super(itemView);
 //		}
-//	}
-//}
+	}
+}

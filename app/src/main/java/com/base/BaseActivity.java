@@ -4,8 +4,10 @@ import com.base.http.HttpForVolley;
 import com.base.swipebacklayout.SwipeBackActivity;
 
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 public class BaseActivity extends SwipeBackActivity {
@@ -16,6 +18,15 @@ public class BaseActivity extends SwipeBackActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		//通知栏和虚拟按键透明(xml需要设置属性)
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			//通知栏透明
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			//虚拟按键透明
+			// getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		}
+
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		http = new HttpForVolley(this);
 	}

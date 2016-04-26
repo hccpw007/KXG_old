@@ -70,7 +70,7 @@
                     android:id="@+id/home_viewpager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/light_blue">
+                    android:background="@color/white">
 
                 </com.base.views.MyViewPager>
 
@@ -80,7 +80,7 @@
                     android:layout_gravity="bottom"
                     android:gravity="center"
                     android:orientation="horizontal">
-
+                    #F16156
                     <RadioButton
                         android:id="@+id/home_rdbtn1"
                         android:layout_width="10dp"
@@ -172,7 +172,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="潮流女装"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -181,7 +181,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="箱包首饰"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -190,7 +190,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="男女鞋靴"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -199,7 +199,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="母婴童装"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -251,7 +251,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="美妆个护"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -260,7 +260,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="家电数码"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -269,7 +269,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="家居家具"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
 
                 <TextView
@@ -278,7 +278,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="更多分类"
-                    android:textColor="#767676"
+                    android:textColor="@color/myblack"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -308,7 +308,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:text="今日推荐"
-                    android:textColor="#f96868"
+                    android:textColor="@color/myred"
                     android:textSize="25sp" />
 
                 <ImageView
@@ -328,13 +328,14 @@
             <TextView
                 android:layout_marginBottom="10dp"
                 android:textSize="12sp"
-                android:textColor="#838383"
+                android:textColor="@color/mygray"
                 android:layout_marginTop="-10dp"
                 android:gravity="center"
                 android:text="点击加载更多"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <android.support.v7.widget.RecyclerView
+                android:padding="4dp"
                 android:id="@+id/home_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -367,7 +368,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:text="今日推荐"
-                    android:textColor="#f96868"
+                    android:textColor="@color/myred"
                     android:textSize="25sp" />
 
                 <ImageView
@@ -387,7 +388,7 @@
             <TextView
                 android:layout_marginBottom="10dp"
                 android:textSize="12sp"
-                android:textColor="#838383"
+                android:textColor="@color/mygray"
                 android:layout_marginTop="-10dp"
                 android:gravity="center"
                 android:text="点击加载更多"

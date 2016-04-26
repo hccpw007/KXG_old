@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.ScrollView;
 
 import com.base.BaseFragment;
+import com.base.BaseValue;
 import com.base.refreshlayout.RefreshLayout;
 import com.base.views.FullyGridLayoutManager;
 import com.base.views.MyGridDecoration;
@@ -78,14 +79,19 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     private void InitRecyclerView1() {
         FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv.setLayoutManager(manager1);
-        home_rv.addItemDecoration(new MyGridDecoration(10, 10, Color.WHITE, true));
+        MyGridDecoration myGridDecoration = new MyGridDecoration(BaseValue.dp2px(4), BaseValue.dp2px(4), Color.WHITE, true);
+        myGridDecoration.setImageView(R.id.item_homerv_img,1);
+        myGridDecoration.setFrame(true);
+        home_rv.addItemDecoration(myGridDecoration);
         home_rv.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
     }
 
     private void InitRecyclerView2() {
         FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv2.setLayoutManager(manager1);
-        home_rv2.addItemDecoration(new MyGridDecoration(10, 10, Color.WHITE, true));
+        MyGridDecoration myGridDecoration = new MyGridDecoration(10, 10, Color.WHITE, true);
+        myGridDecoration.setImageView(R.id.item_homerv_img,1);
+        home_rv2.addItemDecoration(myGridDecoration);
         home_rv2.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
     }
 
