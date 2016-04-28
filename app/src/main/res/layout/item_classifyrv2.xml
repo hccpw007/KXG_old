@@ -11,9 +11,12 @@
       android:layout_width="match_parent"
       android:layout_height="45dp" />
     <TextView
+        android:singleLine="true"
+        android:textSize="14sp"
+        android:textColor="@color/myblack"
         android:id="@+id/item_classifyrv2_tv"
         android:gravity="center"
-        android:text="dgas"
+        android:text="牛逼的男装"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="30dp" />
 </LinearLayout>

@@ -9,20 +9,20 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="5dp"
-        android:background="@color/myblack" />
+        android:layout_marginLeft="8dp"
+        android:background="@color/mygray" />
 
     <View
         android:id="@+id/item_classify_view"
-        android:layout_width="5dp"
-        android:layout_height="50dp"
+        android:layout_width="8dp"
+        android:layout_height="60dp"
         android:background="@color/myred"
         android:visibility="gone" />
 
     <TextView
         android:id="@+id/item_classifyrv1_tv"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:singleLine="true"
         android:textColor="@color/myblack"
@@ -33,9 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:background="@color/myblack" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/mygray" />
 
     <View
         android:visibility="gone"
@@ -43,6 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="5dp"
-        android:background="@color/myblack" />
+        android:layout_marginLeft="8dp"
+        android:background="@color/mygray" />
 </RelativeLayout>

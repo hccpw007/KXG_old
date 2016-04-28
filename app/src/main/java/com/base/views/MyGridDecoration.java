@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 /**
+ * RecyclerView的分割线
  * Created by Administrator on 2016/4/19.
  */
 public class MyGridDecoration extends RecyclerView.ItemDecoration {
@@ -107,8 +108,8 @@ public class MyGridDecoration extends RecyclerView.ItemDecoration {
             viewById.setLayoutParams(layoutParams);
 
             if (itemSize == 1) {
-                layoutParams.width = 176;
-                layoutParams.height = 176;
+                layoutParams.width = 155;
+                layoutParams.height = 155;
                 viewById.setLayoutParams(layoutParams);
             }
             if (parent.getChildPosition(view) == 1) {

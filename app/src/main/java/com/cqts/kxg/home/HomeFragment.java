@@ -17,6 +17,7 @@ import com.base.BaseValue;
 import com.base.refreshlayout.RefreshLayout;
 import com.base.views.FullyGridLayoutManager;
 import com.base.views.MyGridDecoration;
+import com.base.views.MyScrollView;
 import com.base.views.MyViewPager;
 import com.cqts.kxg.R;
 import com.cqts.kxg.home.adapter.HomeRecyclerViewAdapter;
@@ -36,7 +37,7 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     private TimerTask timerTask;
     private RecyclerView home_rv;
     private RecyclerView home_rv2;
-    private ScrollView home_scroll;
+    private MyScrollView home_scroll;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,10 +57,11 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         rdBtn[3] = ((RadioButton) view.findViewById(R.id.home_rdbtn4));
         home_rv = (RecyclerView) view.findViewById(R.id.home_rv);
         home_rv2 = (RecyclerView) view.findViewById(R.id.home_rv2);
-        home_scroll = (ScrollView) view.findViewById(R.id.home_scroll);
+        home_scroll = (MyScrollView) view.findViewById(R.id.home_scroll);
         home_refresh = (RefreshLayout) view.findViewById(R.id.home_refresh);
 
         home_refresh.setScrollView(home_scroll);
+
         home_refresh.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

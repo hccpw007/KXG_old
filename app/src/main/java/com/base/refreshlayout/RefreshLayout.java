@@ -21,6 +21,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.base.BaseValue;
+import com.base.views.MyScrollView;
 import com.cqts.kxg.R;
 /**
  * 使用方法:  使用之前在Activity的setContentView()方法之前初始化组件---setInit() <br>
@@ -108,20 +109,17 @@ public class RefreshLayout extends LinearLayout {
 		success, failed, close
 	}
 
-	@SuppressLint("NewApi")
-	public void setScrollView(ScrollView view) {
+	public void setScrollView(MyScrollView view) {
 		this.scrollView = view;
-		view.setOnHoverListener(new OnHoverListener() {
+		view.setOnScrollListener(new MyScrollView.OnScrollListener() {
 			@Override
-			public boolean onHover(View v, MotionEvent event) {
-				int scrollY = v.getScrollY();
+			public void onScroll(int scrollY) {
 				if (scrollY == 0) {
 					isCanRefreshForView = true;
 				} else {
 					isCanRefresh = false;
 					isCanRefreshForView = false;
 				}
-				return false;
 			}
 		});
 	}

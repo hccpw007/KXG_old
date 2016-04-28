@@ -36,7 +36,7 @@ public class ClassifyRecyclerViewAdapter1 extends RecyclerView.Adapter<ClassifyR
 
     @Override
     public void onBindViewHolder(final MyViewHolder myViewHolder, final int p) {
-        myViewHolder.textView.setText(p + "===");
+        myViewHolder.textView.setText("要四个字");
         list.get(p).viewHolder = myViewHolder;
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +77,10 @@ public class ClassifyRecyclerViewAdapter1 extends RecyclerView.Adapter<ClassifyR
 
         if (p == list.size()-1) {
             myViewHolder.item_classify_view1.setVisibility(View.GONE);
+            myViewHolder.item_classify_view3.setVisibility(View.GONE);
+        }
+        if (p == 0) {
+            myViewHolder.item_classify_view2.setVisibility(View.GONE);
         }
 
 

@@ -48,7 +48,6 @@ public class ClassifyFragment extends BaseFragment {
 
         InitRecyclerView1();
         InitRecyclerView2();
-//        home_scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
     }
 
     private void InitRecyclerView1() {
@@ -62,7 +61,7 @@ public class ClassifyFragment extends BaseFragment {
         classify_rv2.setOverScrollMode(View.OVER_SCROLL_NEVER);
         GridLayoutManager manager = new GridLayoutManager(getActivity(),3);
         classify_rv2.setLayoutManager(manager);
-        MyGridDecoration myGridDecoration = new MyGridDecoration(20, 20, getResources().getColor(R.color.white), false);
+        MyGridDecoration myGridDecoration = new MyGridDecoration(20, 10, getResources().getColor(R.color.white), false);
         myGridDecoration.setImageView(R.id.item_classifyrv2_img,1);
         classify_rv2.addItemDecoration(myGridDecoration);
         classify_rv2.setAdapter(new ClassifyRecyclerViewAdapter2(getActivity(),list));

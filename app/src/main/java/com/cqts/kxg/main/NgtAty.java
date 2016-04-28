@@ -69,8 +69,8 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
 
     private void InitFragment() {
         list.add(new HomeFragment());
-        list.add(new ClassifyFragment());
         list.add(new Fragment2());
+        list.add(new ClassifyFragment());
         list.add(new Fragment2());
         list.add(new Fragment2());
         ngt_pager.setFragemnt(getSupportFragmentManager(), list);
