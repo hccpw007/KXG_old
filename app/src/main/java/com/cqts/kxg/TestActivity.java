@@ -3,7 +3,9 @@ package com.cqts.kxg;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class TestActivity extends Activity {
+import com.cqts.kxg.main.MyActivity;
+
+public class TestActivity extends MyActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

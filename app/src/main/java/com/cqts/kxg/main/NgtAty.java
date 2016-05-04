@@ -18,6 +18,7 @@ import com.base.BaseValue;
 import com.base.views.MyViewPager;
 import com.base.views.MyViewPager.OnMyPageChangeListener;
 import com.cqts.kxg.R;
+import com.cqts.kxg.center.LoginedFragment;
 import com.cqts.kxg.classify.ClassifyFragment;
 import com.cqts.kxg.home.HomeFragment;
 
@@ -72,7 +73,7 @@ public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, 
         list.add(new Fragment2());
         list.add(new ClassifyFragment());
         list.add(new Fragment2());
-        list.add(new Fragment2());
+        list.add(new LoginedFragment());
         ngt_pager.setFragemnt(getSupportFragmentManager(), list);
         ngt_pager.setOnMyPageChangeListener(this);
     }

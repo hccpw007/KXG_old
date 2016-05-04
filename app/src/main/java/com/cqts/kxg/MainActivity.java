@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 
 import com.base.BaseActivity;
 import com.base.views.MyGridDecoration;
+import com.cqts.kxg.main.MyActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends MyActivity {
 
 	private GridLayoutManager manager1;
 
