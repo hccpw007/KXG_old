@@ -2,7 +2,6 @@ package com.base.refreshlayout;
 
 import java.util.HashMap;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -236,7 +235,7 @@ public class RefreshLayout extends LinearLayout {
 
 	private void viewOnLayout(Context context) {
 		setOrientation(LinearLayout.VERTICAL);
-		headView = LayoutInflater.from(context).inflate(R.layout.refresh_head,
+		headView = LayoutInflater.from(context).inflate(R.layout.view_refresh_head,
 				null);
 		params = new LayoutParams(LayoutParams.MATCH_PARENT, viewHeight);
 		params.topMargin = -viewHeight;

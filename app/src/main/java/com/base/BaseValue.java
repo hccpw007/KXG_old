@@ -1,7 +1,9 @@
 package com.base;
 
 import android.app.Application;
+import android.content.Context;
 import android.util.DisplayMetrics;
+import android.view.inputmethod.InputMethodManager;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -16,7 +18,7 @@ public class BaseValue {
 	public static int densityDPI;// 屏幕密度
 	public static Gson gson;
 	public static RequestQueue mQueue;
-	
+	public static InputMethodManager imm; //输入法管理器
 	
 	public static void setInit(Application application) {
 		DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -27,7 +29,8 @@ public class BaseValue {
 		densityDPI = displayMetrics.densityDpi;
 		gson = new Gson();
 		mQueue = Volley.newRequestQueue(application);
-		
+		imm = (InputMethodManager) application.getBaseContext()
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
 	}
 	
 	/**

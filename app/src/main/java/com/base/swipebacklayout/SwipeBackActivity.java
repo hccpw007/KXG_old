@@ -15,7 +15,6 @@ public class SwipeBackActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
 		overridePendingTransition(R.anim.activity_ani_enter, 0);
 		getWindow().setBackgroundDrawable(new ColorDrawable(0));

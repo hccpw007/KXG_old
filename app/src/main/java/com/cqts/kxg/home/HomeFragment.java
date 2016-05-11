@@ -1,5 +1,6 @@
 package com.cqts.kxg.home;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.ScrollView;
 
@@ -26,7 +28,8 @@ import com.cqts.kxg.home.adapter.HomeViewpagerAdapter;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class HomeFragment extends BaseFragment implements Callback, MyViewPager.OnMyPageChangeListener {
+public class HomeFragment extends BaseFragment implements Callback, MyViewPager
+        .OnMyPageChangeListener, View.OnClickListener {
     private static final String ViewGroup = null;
     private static final int VIEWPAGER = -1;
     private Handler handler;
@@ -38,6 +41,7 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
     private RecyclerView home_rv;
     private RecyclerView home_rv2;
     private MyScrollView home_scroll;
+    private LinearLayout home_search;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,7 +63,16 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         home_rv2 = (RecyclerView) view.findViewById(R.id.home_rv2);
         home_scroll = (MyScrollView) view.findViewById(R.id.home_scroll);
         home_refresh = (RefreshLayout) view.findViewById(R.id.home_refresh);
+        home_search = (LinearLayout) view.findViewById(R.id.home_search);
 
+        home_search.setOnClickListener(this);
+        InitRefresh();
+        InitRecyclerView1();
+        InitRecyclerView2();
+        InitViewPage();
+    }
+
+    private void InitRefresh() {
         home_refresh.setScrollView(home_scroll);
 
         home_refresh.setOnRefreshListener(new RefreshLayout.OnRefreshListener() {
@@ -70,19 +83,26 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         });
 
         home_scroll.setOverScrollMode(View.OVER_SCROLL_NEVER);
+    }
 
-
-        InitRecyclerView1();
-        InitRecyclerView2();
-        InitViewPage();
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.home_search: //搜索
+                startActivity(new Intent(getActivity(),SearchActivity.class));
+                break;
+            default:
+                break;
+        }
     }
 
     //第一个recyclerview(今日推荐)
     private void InitRecyclerView1() {
         FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv.setLayoutManager(manager1);
-        MyGridDecoration myGridDecoration = new MyGridDecoration(BaseValue.dp2px(4), BaseValue.dp2px(4), Color.WHITE, true);
-        myGridDecoration.setImageView(R.id.item_homerv_img,1);
+        MyGridDecoration myGridDecoration = new MyGridDecoration(BaseValue.dp2px(4), BaseValue
+                .dp2px(4), Color.WHITE, true);
+        myGridDecoration.setImageView(R.id.item_homerv_img, 1);
         myGridDecoration.setFrame(true);
         home_rv.addItemDecoration(myGridDecoration);
         home_rv.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
@@ -92,7 +112,7 @@ public class HomeFragment extends BaseFragment implements Callback, MyViewPager.
         FullyGridLayoutManager manager1 = new FullyGridLayoutManager(getActivity(), 2);
         home_rv2.setLayoutManager(manager1);
         MyGridDecoration myGridDecoration = new MyGridDecoration(10, 10, Color.WHITE, true);
-        myGridDecoration.setImageView(R.id.item_homerv_img,1);
+        myGridDecoration.setImageView(R.id.item_homerv_img, 1);
         home_rv2.addItemDecoration(myGridDecoration);
         home_rv2.setAdapter(new HomeRecyclerViewAdapter(getActivity()));
     }

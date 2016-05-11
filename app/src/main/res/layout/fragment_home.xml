@@ -38,13 +38,14 @@
                     android:src="@mipmap/home_classify_ic" />
 
                 <LinearLayout
+                    android:id="@+id/home_search"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:background="@drawable/shape_f8f8f8_rectangle"
                     android:gravity="center_vertical">
 
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

@@ -22,6 +22,9 @@ import com.cqts.kxg.center.LoginedFragment;
 import com.cqts.kxg.classify.ClassifyFragment;
 import com.cqts.kxg.home.HomeFragment;
 
+/**
+ * 主页 导航页
+ */
 public class NgtAty extends FragmentActivity implements OnMyPageChangeListener, OnCheckedChangeListener {
     private ArrayList<BaseFragment> list = new ArrayList<BaseFragment>();
     ;

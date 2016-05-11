@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.cqts.kxg.MainActivity;
 import com.cqts.kxg.R;
 import com.cqts.kxg.views.FavoriteAnimation;
 

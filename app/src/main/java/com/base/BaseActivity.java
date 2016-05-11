@@ -2,6 +2,7 @@ package com.base;
 
 import com.base.http.HttpForVolley;
 import com.base.swipebacklayout.SwipeBackActivity;
+import com.cqts.kxg.R;
 
 import android.content.pm.ActivityInfo;
 import android.os.Build;
@@ -57,7 +58,7 @@ public class BaseActivity extends SwipeBackActivity {
     /**
      * 是否透明化状态栏
      */
-    public void transparencyBar(boolean transparency) {
+    public void setTransparencyBar(boolean transparency) {
         if (transparency) {
             //通知栏和虚拟按键透明(xml需要设置属性)
 

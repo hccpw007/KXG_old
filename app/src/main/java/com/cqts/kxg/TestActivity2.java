@@ -1,6 +1,6 @@
 package com.cqts.kxg;
 
-import android.content.Intent;
+import android.app.PendingIntent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -9,9 +9,10 @@ import android.widget.EditText;
 
 import com.base.swipebacklayout.SwipeBackActivity;
 import com.base.views.MyTagView;
+import com.cqts.kxg.R;
 import com.cqts.kxg.main.MyActivity;
 
-public class TestActivity extends MyActivity implements View.OnClickListener {
+public class TestActivity2 extends SwipeBackActivity implements View.OnClickListener {
     InputMethodManager m; // 软键盘管理器
     private MyTagView tag;
     private EditText et;
@@ -21,11 +22,15 @@ public class TestActivity extends MyActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         Button button = (Button) findViewById(R.id.button);
-        button.setText("按钮1");
+        button.setText("按钮2");
         button.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(this,TestActivity2.class));
+    }
+
+    @Override
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+        super.overridePendingTransition(enterAnim, exitAnim);
     }
 }

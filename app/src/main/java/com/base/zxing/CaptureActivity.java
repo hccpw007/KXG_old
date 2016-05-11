@@ -25,6 +25,7 @@ import com.cqts.kxg.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 /**
+ * 二维码扫描
  * Initial the camera
  * @author Ryan.Tang
  */
@@ -47,7 +48,7 @@ public class CaptureActivity extends Activity implements Callback {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.zxing_camera);
+		setContentView(R.layout.view_zxing_camera);
 		//ViewUtil.addTopView(getApplicationContext(), this, R.string.scan_card);
 		CameraManager.init(getApplication());
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
