@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".center.RegisterActivity"
+            android:name=".center.Register1Activity"
             android:theme="@style/SwipeBackTheme">
         </activity>
         <activity android:name=".center.FavoriteActivity"

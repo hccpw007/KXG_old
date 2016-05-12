@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.base.BaseActivity;
 import com.base.views.MyEditText;
 import com.cqts.kxg.R;
 import com.cqts.kxg.main.MyActivity;
@@ -50,7 +49,7 @@ public class LoginActivity extends MyActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_regist_tv: //注册
-                startActivity(new Intent(this,RegisterActivity.class));
+                startActivity(new Intent(this,Register1Activity.class));
                 break;
             case R.id.lgoin_forget_tv: //忘记密码
                 break;
