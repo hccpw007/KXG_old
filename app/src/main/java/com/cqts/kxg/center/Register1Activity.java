@@ -1,5 +1,6 @@
 package com.cqts.kxg.center;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,7 @@ public class Register1Activity extends MyActivity implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.register_btn: //注册btn
+                startActivity(new Intent(this,Register2Activity.class));
                 break;
             default:
                 break;

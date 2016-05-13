@@ -58,6 +58,7 @@
         <activity android:name=".center.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -65,8 +66,9 @@
             android:name=".center.Register1Activity"
             android:theme="@style/SwipeBackTheme">
         </activity>
-        <activity android:name=".center.FavoriteActivity"
-                  android:theme="@style/SwipeBackTheme">
+        <activity
+            android:name=".center.FavoriteActivity"
+            android:theme="@style/SwipeBackTheme">
         </activity>
         <activity
             android:name=".home.SearchActivity"
@@ -76,5 +78,9 @@
         </activity>
         <activity android:name=".TestActivity2">
         </activity>
+        <activity android:name=".center.Register2Activity"
+                  android:theme="@style/SwipeBackTheme">
+        </activity>
     </application>
+
 </manifest>
